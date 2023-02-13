@@ -33,6 +33,6 @@ int main()
 
         default:
 
-            cout << "Error! operator is wrong";
+            cout << "Error! operator is wrong, very wrong";
 
             break;  }  return 0;}
