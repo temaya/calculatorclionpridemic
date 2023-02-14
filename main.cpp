@@ -1,38 +1,47 @@
-//create a calculator app
 #include <iostream>
-using namespace std;
 
 int main()
 {
     char op;
-    float num1, num2;
+    double num1, num2;
 
-    cout << "Enter operator either + or - or * or /: ";
-    cin >> op;
+    std::cout << "Enter operator (+, -, *, /): ";
+    std::cin >> op;
 
-    cout << "Enter two operands: ";
-    cin >> num1 >> num2;
+    std::cout << "Enter two numbers: ";
+    std::cin >> num1 >> num2;
+
+    double result;
 
     switch(op)
     {
         case '+':
-            cout << num1+num2 << endl;
+            result = num1 + num2;
             break;
 
         case '-':
-            cout << num1-num2 << endl;
+            result = num1 - num2;
             break;
 
         case '*':
-            cout << num1*num2 << endl;
+            result = num1 * num2;
             break;
 
         case '/':
-            cout << num1/num2 << endl;
+            if(num2 == 0)
+            {
+                std::cout << "Error: Divide by zero\n";
+                return 1;
+            }
+            result = num1 / num2;
             break;
 
         default:
+            std::cout << "Invalid operator\n";
+            return 1;
+    }
 
-            cout << "Error! operator is wrong";
+    std::cout << num1 << ' ' << op << ' ' << num2 << " = " << result << '\n';
 
-            break;  }  return 0;}
+    return 0;
+}
