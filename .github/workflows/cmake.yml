@@ -33,6 +33,7 @@ jobs:
         cd build
         conan install --build=gtest ..
         cmake ..
+        cmake --build .
         make
         cd bin
         ./calculatorclionpridemic_test
