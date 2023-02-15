@@ -1,47 +1,41 @@
 #include <iostream>
+#include "calculator.h"
 
-int main()
-{
-    char op;
+int main() {
+    Calculator calc;
     double num1, num2;
+    char op;
+
+    std::cout << "Enter first number: ";
+    std::cin >> num1;
 
     std::cout << "Enter operator (+, -, *, /): ";
     std::cin >> op;
 
-    std::cout << "Enter two numbers: ";
-    std::cin >> num1 >> num2;
+    std::cout << "Enter second number: ";
+    std::cin >> num2;
 
     double result;
 
-    switch(op)
-    {
+    switch(op) {
         case '+':
-            result = num1 + num2;
+            result = calc.add(num1, num2);
             break;
-
         case '-':
-            result = num1 - num2;
+            result = calc.subtract(num1, num2);
             break;
-
         case '*':
-            result = num1 * num2;
+            result = calc.multiply(num1, num2);
             break;
-
         case '/':
-            if(num2 == 0)
-            {
-                std::cout << "Error: Divide by zero\n";
-                return 1;
-            }
-            result = num1 / num2;
+            result = calc.divide(num1, num2);
             break;
-
         default:
-            std::cout << "Invalid operator\n";
+            std::cout << "Invalid operator";
             return 1;
     }
 
-    std::cout << num1 << ' ' << op << ' ' << num2 << " = " << result << '\n';
+    std::cout << "Result: " << result << std::endl;
 
     return 0;
 }
