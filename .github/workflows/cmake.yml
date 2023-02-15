@@ -23,7 +23,7 @@ jobs:
 
     - name: Install Google Test
       run: |
-        sudo apt-get install -y google-test
+        sudo apt-get install -y googletest
         sudo apt-get install libgtest-dev
     - name: Build and Test
       run: |
