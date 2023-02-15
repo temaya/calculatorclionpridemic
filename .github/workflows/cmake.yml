@@ -44,6 +44,8 @@ jobs:
       if: success()
       uses: docker/build-push-action@v3
       with:
+        context: .
         push: true
         tags: projectdatics/calculatorpridemic:${{ github.sha }}
+        builder: docker
 
