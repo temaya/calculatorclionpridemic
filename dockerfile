@@ -2,7 +2,7 @@
 FROM alpine:latest
 
 # Install the build tools and libraries required by your application
-RUN apk add --no-cache g++ make cmake
+RUN apk add --no-cache g++ make cmake gtest-dev
 
 # Copy the source code into the image
 COPY . /main    
