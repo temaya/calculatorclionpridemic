@@ -27,12 +27,12 @@ jobs:
 
     - name: Conan version
       run: echo "${{ steps.conan.outputs.version }}"
-      
+
     - name: Build and Test
       run: |
         mkdir build
         cd build
-        conan install ..
+        conan install --build=gtest ..
         cmake ..
         make
         cd bin
