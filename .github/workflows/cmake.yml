@@ -24,11 +24,10 @@ jobs:
     - name: Install Google Test
       run: |
         sudo apt-get install -y googletest
-        sudo apt-get install libgtest-dev
-        sudo apt-get install cmake # install cmake
-        cd /usr/src/gtest
-        sudo cmake CMakeLists.txt
-        sudo make install
+        sudo apt install libgtest-dev build-essential cmake
+        cd /usr/src/googletest
+        sudo cmake .
+        sudo cmake --build . --target install
     - name: Build and Test
       run: |
         mkdir build
