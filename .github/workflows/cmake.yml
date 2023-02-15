@@ -28,6 +28,13 @@ jobs:
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make 
+    - name: Set environment variables for GTest
+      run: |
+        export GTEST_ROOT=/usr/src/googletest/googletest
+        export GTEST_LIBRARY=/usr/lib/libgtest.a
+        export GTEST_INCLUDE_DIR=/usr/include/gtest
+        export GTEST_MAIN_LIBRARY=/usr/lib/libgtest_main.a
+
     - name: Build and Test
       run: |
         mkdir build
