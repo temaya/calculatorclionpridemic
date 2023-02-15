@@ -25,6 +25,10 @@ jobs:
       run: |
         sudo apt-get install -y googletest
         sudo apt-get install libgtest-dev
+        sudo apt-get install cmake # install cmake
+        cd /usr/src/gtest
+        sudo cmake CMakeLists.txt
+        sudo make install
     - name: Build and Test
       run: |
         mkdir build
